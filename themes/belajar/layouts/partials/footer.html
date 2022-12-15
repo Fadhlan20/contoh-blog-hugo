@@ -1,0 +1,8 @@
+<hr>
+
+tags : 
+{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <a href="/tags/{{ $name }}">{{ $name }}</a>
+{{ end }}
+
+<p>belajar dulu oy</p>

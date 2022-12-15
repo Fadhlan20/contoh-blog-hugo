@@ -1,0 +1,35 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+
+    <h2>Daftar Konten</h2>
+    <ul>
+        {{ range .Site.RegularPages }}
+        <li>
+            <a href="{{.Permalink}}"> {{ .Title }}</a> 
+            <p>{{ or .Params.description .Summary }}</p>
+            <span> Dibuat pada : {{ .Date.Format "2006-01-02" }}</span> 
+        </li>
+        {{ end }}
+    </ul>
+
+    <h2>Daftar blog</h2>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "post" }}
+        <li>
+            <a href="{{.Permalink}}"> {{ .Title }}</a> 
+            <span> Dibuat pada : {{ .Date.Format "2006-01-02" }}</span> 
+        </li>
+        {{ end }}
+    </ul>
+
+    <h2>Daftar tentang</h2>
+    <ul>
+        {{ range where .Site.RegularPages "Section" "tentang" }}
+        <li>
+            <a href="{{.Permalink}}"> {{ .Title }}</a> 
+            <span> Dibuat pada : {{ .Date.Format "2006-01-02" }}</span> 
+        </li>
+        {{ end }}
+    </ul>
+
+{{ end }}
