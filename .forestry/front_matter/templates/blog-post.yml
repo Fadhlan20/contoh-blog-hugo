@@ -1,4 +1,23 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: judul
+  type: text
+  config:
+    required: false
+  label: Judul
+  description: ini contoh
+- name: tanggal_hari_ini
+  type: datetime
+  label: tanggal hari ini
+  description: ''
+  config:
+    required: true
+    date_format: 12/17/2022
+    time_format: 
+    display_utc: false
+- name: tags
+  type: tag_list
+  default: []
+  label: tags
